@@ -1,0 +1,13 @@
+<div class="main container">
+  <div class="row">
+    <div class="col-md-12 price">
+      <h1>Total Price: {{total}}</h1>
+    </div>
+  </div>
+
+  <div class="row mt-3 mb-5">
+    <div class="col-md-3 mt-2" *ngFor="let p of products">
+      <app-product [data]="p" (dataChange)="calTotal()"></app-product>
+    </div>
+  </div>
+</div>

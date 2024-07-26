@@ -1,0 +1,54 @@
+<div class="add-product-container">
+  <h2>Add New Product</h2>
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="productName">Product Name</label>
+      <input type="text" id="productName" [(ngModel)]="productName" name="productName" required>
+    </div>
+    <div class="form-group">
+      <label for="productDescription">Product Description</label>
+      <textarea id="productDescription" [(ngModel)]="productDescription" name="productDescription" required></textarea>
+    </div>
+    <div class="form-group">
+      <label for="productPrice">Product Price</label>
+      <input type="number" id="productPrice" [(ngModel)]="productPrice" name="productPrice" required>
+    </div>
+    <div class="pick-color d-flex justify-content-start gap-2">
+      <button
+        class="btn rounded-circle black-button"
+        [ngClass]="{'active': activeColor === 'black'}"
+        (click)="onButtonClick('black')">
+      </button>
+      <button
+        class="btn rounded-circle pink-button"
+        [ngClass]="{'active': activeColor === 'pink'}"
+        (click)="onButtonClick('pink')">
+      </button>
+      <button
+        class="btn rounded-circle Violet-button"
+        [ngClass]="{'active': activeColor === 'Violet'}"
+        (click)="onButtonClick('Violet')">
+      </button>
+    </div>
+    <div class="form-group">
+      <label for="productPrice">Product Model</label>
+      <div class="pick-size">
+        <button class="custom-button" *ngFor="let size of productSize; let i = index"
+        [ngClass]="{'active': activeButton === i}"
+        (click)="clickSize(i)">{{size}}</button>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="Instock">Instock</label>
+      <select name="fruits">
+        <option value="1">Có</option>
+        <option value="0">Không</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="productQuanity">Product Quantity</label>
+      <input type="number" id="productQauntity" [(ngModel)]="productQauntity" name="productQauntity" required>
+    </div>
+    <button class="submit" type="submit">Add Product</button>
+  </form>
+</div>

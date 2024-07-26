@@ -1,0 +1,150 @@
+.new-post-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+textarea,
+select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+textarea {
+  height: 80px;
+}
+
+.color-input {
+  width: 40px;
+  height: 40px;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.color-box {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.color-display {
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.selected-images {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.selected-images img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+button[type="button"] {
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+button[type="button"]:hover {
+  background-color: #0056b3;
+}
+
+button.submit {
+  width: 100%;
+  padding: 10px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button.submit[disabled] {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+button.submit:hover:not([disabled]) {
+  background-color: #218838;
+}
+
+.borderbox {
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+.form-group .right{
+  margin-left: 490px;
+  margin-bottom: 10px;
+}
+.pick-color .rightt{
+  margin-left: 490px;
+  margin-bottom: 10px;
+}
+.color-box{
+  border: 1px black solid;
+  padding: 5px;
+
+}
+.pick-size .input-model{
+  width: 80%;
+}
+.size{
+  border: 1px black solid;
+  padding: 15px;
+  margin-bottom: 5px;
+}
+img {
+  display: block;
+  margin-top: 20px;
+}
+.input-model {
+  width: calc(100% - 32px); /* 32px là kích thước của nút X */
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box; /* Thêm vào để tính cả padding và border */
+}

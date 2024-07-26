@@ -1,0 +1,58 @@
+<div class="new-post-container">
+  <h2>Add New Product</h2>
+  <form (ngSubmit)="onSubmit()" #productForm="ngForm">
+    <div class="form-group">
+      <label for="productName">Product Name</label>
+      <input type="text" id="productName" [(ngModel)]="productName" name="productName" required>
+    </div>
+    <div class="form-group">
+      <label for="productDescription">Product Description</label>
+      <textarea id="productDescription" [(ngModel)]="productDescription" name="productDescription" required></textarea>
+    </div>
+    <div class="form-group">
+      <label for="productPrice">Product Price</label>
+      <input type="number" id="productPrice" [(ngModel)]="productPrice" name="productPrice" required>
+    </div>
+    <div class="borderbox">
+      <div class="pickk">
+        <label for="productModels">Product Image</label>
+        <div class="pick-color d-flex justify-content-start gap-2">
+          <button type="button" class="rightt" (click)="addColorField()">+</button>
+        </div>
+        <div class="selected-colors">
+          <div *ngFor="let colorField of colorFields; let i = index" class="color-box">
+            <input [(ngModel)]="colorField.color" [name]="'color' + i" type="color" class="color-input"/>
+            <button type="button" (click)="openFileChooser(i)">Thêm hình ảnh</button>
+            <input type="file" #fileInput accept="image/*" (change)="onFileSelected($event, i)" style="display: none;">
+            <div class="selected-images">
+              <img *ngFor="let img of colorField.images" [src]="img" class="image-preview"/>
+            </div>
+            <button type="button" (click)="removeColorField(i)">X</button>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="productModels">Product Models</label>
+        <button type="button" class="right" (click)="addModel()">+</button>
+        <div class="pick-size">
+          <div class="size" *ngFor="let model of productModels; let i = index">
+            <input type="text" class="input-model" [(ngModel)]="productModels[i].name" name="productModel{{i}}" placeholder="Model Name" required>
+            <button type="button" (click)="removeModel(i)">X</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="productQuantity">Product Quantity</label>
+      <input type="number" id="productQuantity" [(ngModel)]="productQuantity" name="productQuantity" required>
+    </div>
+    <div class="form-group">
+      <label for="inStock">In Stock</label>
+      <select [(ngModel)]="inStock" name="inStock">
+        <option [ngValue]="true">Có</option>
+        <option [ngValue]="false">Không</option>
+      </select>
+    </div>
+    <button class="submit" type="submit" [disabled]="!productForm.form.valid">Add Product</button>
+  </form>
+</div>

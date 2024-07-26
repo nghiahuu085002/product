@@ -1,0 +1,14 @@
+<h3>Total: {{ total }} $</h3>
+
+<div class="products-container">
+  <div *ngFor="let product of products; let i = index">
+    <app-product
+      [data]="product"
+      [carouselId]="'carousel' + i"
+      [productSlide]="product.productSlide"
+      [productSize]="product.productSize"
+      (dataChange)="onProductDataChange($event)">
+    </app-product>
+  </div>
+</div>
+
